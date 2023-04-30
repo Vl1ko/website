@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрос</title>
+</head>
+
+<style>
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@media only screen and (max-widh: 1200px) {
+    .navbar {
+        text-align: left;
+        width: 25%;
+        height: 50px;
+        padding-left: 25%;
+        position: relative;;
+    }   
+}
+
+textarea {
+    resize: none;
+}
+    
+body {
+    background: #ffffff;
+}
+
+.main {
+    margin: 0 auto;
+    text-align: left;
+    left: 10px;
+    top: 125px;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+/* input {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 auto
+} */
+
+.q {
+    width: 40%;
+    max-width: 40%;
+    height: fit-content;
+    max-height: 200em;
+    display: grid;
+    justify-content: space-between;
+    padding: 1em;
+    margin: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin-left: 50%;
+    margin-right: -50%;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .4);
+    transform: translate(-50%, 50%);
+}
+
+.q0 {
+    width: 40%;
+    max-width: 40%;
+    height: fit-content;
+    margin: 1em;
+    margin-top: 6em;
+    margin-bottom: -3em;
+    margin-left: 50%;
+    margin-right: -50%;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .4);
+    transform: translate(-50%, 50%);
+}
+
+.q1 {
+    width: 40%;
+    max-width: 40%;
+    height: fit-content;
+    margin: 1em;
+    margin-top: 6em;
+    margin-bottom: 0em;
+    margin-left: 50%;
+    margin-right: -50%;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .4);
+    transform: translate(-50%, 50%);
+}
+
+.q2 {
+    width: 40%;
+    max-width: 40%;
+    height: fit-content;
+    display: grid;
+    justify-content: space-between;
+    padding: 1em;
+    margin: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin-left: 50%;
+    margin-right: -50%;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .4);
+    transform: translate(-50%, 50%);
+}
+
+.q3 {
+    width: 40%;
+    max-width: 40%;
+    height: fit-content;
+    display: grid;
+    justify-content: space-between;
+    padding: 1em;
+    margin: 1em;
+    margin-top: 9em;
+    margin-bottom: 1.5em;
+    margin-left: 50%;
+    margin-right: -50%;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .4);
+    transform: translate(-50%, 50%);
+}
+
+.chekboxes {
+    width: 50%;
+    height: 50%;
+    margin: 2em;
+    margin-top: 6em;
+    margin-bottom: 3em;
+    margin-left: 50%;
+    margin-right: -50%;
+    padding: 2em;
+    border-radius: 10px;
+    text-align: center;
+    transform: translate(-50%, 50%);
+}
+
+select {
+        height: 100%;
+        width: 100%;
+}
+
+input[type=radio] {
+    background: #ffffff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 5px 15px;
+        border: 1 none;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+}
+
+input[type=tel] {
+    background: #ffffff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 5px 15px;
+        height: 50%;
+        width: 50%;
+        border: 1 none;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+}
+
+input[type=url] {
+    background: #ffffff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 5px 15px;
+        height: 50%;
+        width: 50%;
+        border: 1 none;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+}
+
+input[type=number] {
+    background: #ffffff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 5px 15px;
+        height: 50%;
+        width: 50%;
+        border: 1 none;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+}
+
+input[type=email] {
+    background: #ffffff;
+    background: #ffffff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 5px 15px;
+        height: 50%;
+        width: 50%;
+        border: 1 none;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+}
+
+input, select, textarea{
+    color: #000000;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: normal;
+}
+
+textarea:focus, input:focus {
+    color: #000000;
+}
+
+input[type=text] {
+        background: #ffffff;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        padding: 5px 15px;
+        height: 50%;
+        width: 50%;
+        border: 1 none;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+}
+
+input[type=button] {    
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: bold;
+        font-size: medium;
+        padding: 5px 15px;
+        background: #2079f9;
+        color: #ffffff;
+        height: 2.5em;
+        width: 8em;
+        border: 0 none;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+      }
+
+input[type=submit] {    
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: bold;
+        font-size: medium;
+        padding: 5px 15px;
+        background: #2079f9;
+        color: #ffffff;
+        height: 2.5em;
+        width: 8em;
+        border: 0 none;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+}
+
+.button {
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 50%);
+}
+
+.main .page1 {
+    margin-top: 7%;
+}
+
+.main .page2 {
+    margin-top: 5%;
+}
+
+.main .page3 {
+    margin-top: 4%;
+}
+
+.main .page4 {
+    margin-top: 17%;
+}
+
+.main .page5 {
+    margin-top: 17%;
+}
+
+h1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    margin-top: -1%;
+    margin-left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 50%);
+}
+
+h2 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    position: absolute;
+    margin-top: -1%;
+    margin-left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 50%);
+}
+
+p {
+    margin-top: 0%;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+}
+
+.logo {
+    position: absolute;
+    padding-left: 10px;
+}
+
+.navbar {
+    text-align: left;
+    width: 50%;
+    height: 70px;
+    padding-left: 25%;
+    position: relative;
+
+}
+
+.navbar .container {
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-menu {
+    text-align: right;
+    margin-right: 1em;
+    height: inherit;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    display: inline-block;
+}
+
+.navbar-menu li {
+    display: inline-block;
+
+}
+
+.navbar-menu li a {
+    display: inline-block;
+    color: #000;
+    opacity: 1;
+    text-decoration: none;
+    padding: 10px;
+    
+}
+
+.navbar-wrap {
+    display: flex;
+    flex-flow: row nowrap;
+    
+}
+
+.navbar-brand {
+    height: inherit;
+    margin-left: 100px;
+    margin-top: 19px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    text-decoration: none;
+    color: #000;
+}
+</style>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand"></a>
+
+            {% load static %}
+            <img class="logo" src="{% static 'main/logo.jpg' %}" height="85" width="85">
+
+            <ul class="navbar-menu">
+                <li><a>Конкурс Социальных аниматоров</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="main">
+        <div class="page1">
+            <h1> Раздел "Об авторе"</h2>
+            <form action="{% url 'response_page' %}" method="">
+                <div class="q">
+                    <p>
+                        Укажите Вашу фамилию *
+                    </p>
+                    <input type="text" class="i1-1" name="i1-1"required/>
+                </div>
+                <div class="q">
+                    <p>
+                        Укажите Ваше имя *
+                    </p>
+                    <input type="text" class ="i1-2" name="i1-2" required/>
+                </div>
+                <div class="q">
+                    <p>
+                        Укажите Ваше отчество (при наличии)
+                    </p>
+                    <input type="text" class="i1-3" name="i1-3"/>
+                </div>
+                </div>
+                <div class="q">
+                    <p>
+                        Укажите Ваш населенный пункт: *
+                    </p>
+                    <input type="text" class="i1-4" name="i1-4" required />
+                </div>
+                <div class="q">
+                    <p>
+                        Укажите Ваш электронный почтовый ящик *
+                    </p>
+                    <input type="email" class="i1-5" name="i1-5" required/>
+                </div>
+                <div class="q">
+                    <p>
+                        Укажите кем вы приходитесь социальному аниматору (если подаете заявку за другого человека)
+                    </p>
+                    <input class="i1-6" name="i1-6" type="text"/>
+                </div>
+        </div>
+        <div class="page2">
+            <h2 align = "center"> Раздел "Герой изменений"</h2>
+            <div class="q">
+                <p>
+                    Укажите фамилию номинанта *
+                </p>
+                <input type="text" class="i2-1" name="i2-1" required/>
+            </div>
+            <div class="q">
+                <p>
+                    Укажите имя номинанта *
+                </p>
+                <input type="text" class="i2-2" name="i2-2" required/>
+            </div>
+            <div class="q">
+                <p>
+                    Укажите отчество номинанта (при наличии)
+                </p>
+                <input type="text" class="i2-3" name="i2-3" />
+            </div>
+            <div class="q">
+                <p>
+                    Укажите возраст номинанта *
+                </p>
+                <input type="text" class="i2-4" name="i2-4" required/>
+            </div>
+            <div class="q">
+                <p>
+                    Укажите профессию/род занятий номинанта *
+                </p>
+                <input type="text" class="i2-5" name="i2-5" required/>
+            </div>
+            <div class="q">
+                <p>
+                    Укажите место работы/учебы, должность номинанта*
+                </p>
+                <input type="text" class="i2-6" name="i2-6" required/>
+            </div>
+            <div class="q">
+                <p>
+                    Укажите ссылку на профиль номинанта в социальной сети Вконтакте *
+                </p>
+                <input type="url" class="i2-7" name="i2-7" required/>
+            </div>
+            <div class="q">
+                <p>
+                    Укажите контактный телефон номинанта *
+                </p>
+                <input type="tel" class="i2-8" name="i2-8" required/>
+            </div>
+            <div class="q">
+                <p>
+                    Укажите Email номинанта *
+                </p>
+                <input type="text" class="i2-9" required/>
+            </div>
+            <div class="q">
+                <p>
+                    Укажите регион номинанта *
+                </p>
+                <select id="selectID" class="i2-10" name="i2-10">
+                    <option value="neopredelen">Выберите ваш регион</option>
+                    <option value="Bocksitogorskiy">Бокситогорский</option>
+                    <option value="Volosovskiy">Волосовский</option>
+                    <option value="Volhovskiy">Волховский</option>
+                    <option value="Vsevolozkiy">Всеволожский</option>
+                    <option value="Vyborgskiy">Выборгский</option>
+                    <option value="Gatchinskiy">Гатчинский</option>
+                    <option value="Kingeseppskiy">Кингесеппский</option>
+                    <option value="Kirishskiy">Киришский</option>
+                    <option value="Kirovskiy">Кировский</option>
+                    <option value="Lodeynopolskiy">Лодейнопольский</option>
+                    <option value="Lomonosovskiy">Ломоносовский</option>
+                    <option value="Lyzkiy">Лужский</option>
+                    <option value="Podporozkiy">Подпорожский</option>
+                    <option value="Priozerskiy">Приозерский</option>
+                    <option value="Slancevskiy">Сланцевский</option>
+                    <option value="Sosnovoborskiy">Сосновоборский ГО</option>
+                    <option value="Tihvinskiy">Тихвинский</option>
+                    <option value="Tosnenskiy">Тосненский</option>
+                </select>
+            </div>
+            <div class="q">
+                <p>
+                    Укажите населенный пункт номинанта *
+                </p>
+                <input type="text" class="i2-11" name="i2-11" required>
+            </div>
+            <div class="q">
+                <p>
+                    Укажите количество жителей в указаном регионе *
+                </p>
+                <select id="selectID" class="i2-10" name="i2-10">
+                    <option value="neopredelen"> Укажите количество жителей</option>
+                    <option value="v100">до 100</option>
+                    <option value="v500">101 - 500</option>
+                    <option value="v1000">501 - 1000</option>
+                    <option value="v5000">1001 - 5000</option>
+                    <option value="v10000">5001 - 10.000</option>
+                    <option value="v50000">10.001 - 50.000</option>
+                    <option value="v100000">50.001 - 100.000</option>
+                    <option value="v500000">100.001 - 500.000</option>
+                    <option value="v1000000">500.001 - 1.000.000</option>
+                    <option value="abv">Свыше миллиона</option>
+                </select>
+            </div>
+        </div>
+            <div class="page3">
+                <h2 align = 'center'><br><br>Раздел "История изменений"</h2>
+                <div class="q0">
+                    <p>
+                        <b>Глава 1. «Предыстория»</b><br>
+                        Опишите как развивалась жизнь на территории до того, как наш герой проявил себя как социальный аниматор. <br>
+                        <small><small><i>Например, если на вашей территории не было мест для прогулок с детьми или отсутствовали места для общения творческих людей.</i></small></small>
+                    </p>
+                    <textarea class="i3-1" name="i3-1" cols="97" rows="10"></textarea>
+                </div>
+                <div class="q0">
+                    <p>
+                        <b>Глава 2. «Завязка»</b><br>
+                        В данной главе описывается проблемная ситуация, которая впоследствии пробудила в нашем герое социального аниматора. Что было не так? Что захотелось изменить?
+                    <small><small><i>Например, исходя из предыдущего ответа - у социального аниматора родился ребенок и он сам столкнулся с проблемой, что некуда выйти с коляской</i></small></small>
+                </p>
+                    <textarea class="i3-2" name="i3-2" cols="97" rows="10"></textarea>
+                </div>
+                <div class="q2">
+                    <p>
+                        <b>Глава 3. «Появление ГЕРОЯ»</b><br>
+                        Здесь описывается главный герой и его суперспособности:<br>
+                        - На что наш герой вдохновил окружающих<br>
+                        – На какие действия?
+                        <small><small><i>(Например, собраться с жителями и обсудить возможные решения проблемы и так далее)</i></small></small><br>
+                        - Кого именно он вдохновил – каких людей? Сколько их было?
+                        <small><small><i>(Это взрослые, дети, они жители этой территории или соседней?)</i></small></small><br>
+                        - Как ему удалось вдохновить и объединить людей? Какие действия предпринял герой, чтобы заинтересовать людей? <br>
+                        - Какова главная суперспособность нашего героя? Какие его личные и профессиональные качества делают его героем изменений?
+                    </p>
+                    <textarea class="i3-3" name="i3-3" cols="97" rows="10"></textarea>
+                </div>
+                <div class="q3">
+                    <p>
+                        <b>Глава 4. «Конфликт»</b><br>
+                        С какими сложностями столкнулся наш герой и что помогло ему их преодолеть?<br>
+                        <small><small><i>Например, герой столкнулся с недоверием со стороны местных жителей, соседи не дружили друг с другом и не желали совместно проводить досуг, родители не хотели сами участвовать в организации детской площадки для своих детей и др.</i></small></small><br>
+                        Как герой смог преодолеть трудности?<br>
+                        <small><small><i>Например, стал знакомиться со старожилами, расспрашивать об истории территории, проявлял интерес к местным традициям и увлечениям соседей, предлагал помощь соседям, организовывал совместные игры для соседских детей и т.п. </i></small></small>
+                    </p>
+                    <textarea class="i3-4" name="i3-4" cols="97" rows="10"></textarea>
+                </div>
+                <div class="q">
+                    <p>
+                        <b>Глава 5. «Развязка»</b><br>
+                        В этой главе читатель узнаёт, что же получилось в результате, а также о том, что делает эту историю уникальной.<br>
+                        Что было организовано/создано/восстановлено?<br>
+                        <small><small><i>Например, несколько семей объединились в клуб по интересам, стали вместе проводить свободное время, к ним со временем присоединились другие, вместе они расчистили и оборудовали игровую площадку</i></small></small><br>
+                        Как изменилась жизнь людей на территории в результате предпринятых действий? В чем проявляются эти изменения?<br>
+                        <small><small><i>Например, люди стали дружелюбнее друг к другу, проводят вместе время, обмениваются знаниями и умениями, оказывают друг другу посильную помощь, организуют регулярные события для себя и соседей и т.п.</i></small></small>
+                    </p>
+                    <textarea class="i3-5" name="i3-5" cols="97" rows="10"></textarea>
+                </div>
+                <div class="page4">
+                    <h2 align = 'center'><br>Раздел "Послесловие"</h2>
+                    <div class="q">
+                        <p>
+                            Что делает эту историю уникальной?
+                        </p>
+                        <textarea class="i4-1" name="i4-1" cols="97" rows="10"></textarea>
+                    </div>
+                    <div class="q">
+                        <p>
+                            Есть ли у истории продолжение?
+                        </p>
+                        <textarea class="i4-2" name="i4-2" cols="97" rows="10"></textarea>
+                    </div>
+                    <div class="q">
+                        <p>
+                            Есть ли у героя последователи, которые вдохновились примером социального аниматора и пошли по его стопам, вдохновляя других? Расскажите немного о них?
+                        </p>
+                        <textarea class="i4-3" name="i4-3" cols="97" rows="10"></textarea>
+                    </div>
+                    <div class="q">
+                        <p>
+                            Это был единичный случай или герой продолжает свою деятельность социального аниматора, вдохновляя людей на новые позитивные изменения?<br>
+                            Расскажите, какое продолжение получила история?
+                        </p>
+                        <textarea class="i4-4" name="i4-4" cols="97" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="page5">
+                    <h2 align="center"><br>Раздел «Иллюстрации»</h2>
+                    <div class="q">    
+                        <p>
+                            Приложите фото и видеоматериалы, подтверждающие реалистичность этой истории *
+                        </p>
+                        <p> <small><small>
+                                    <b>Примечание:</b> <br> Приложите ссылку на материалы, размещённые на одном из облачных хранилищ (Яндекс, Google, mail). Не забудьте открыть доступ к просмотру.
+                            </small></small>
+                        </p>
+                        <textarea class="ph1" name="ph1" cols="97" rows="1" required></textarea>
+                    </div>
+                    <div class="q">    
+                        <p>
+                            Приложите фото героя, подтверждающее реальность его существования *
+                        </p>
+                        <p> <small><small>
+                            <b>Примечание:</b> <br> Приложите ссылку на материалы, размещённые на одном из облачных хранилищ (Яндекс, Google, mail). Не забудьте открыть доступ к просмотру.
+                            </small></small>
+                        </p>
+                        <textarea class="ph2" name="ph2" cols="97" rows="1" required></textarea>
+                    </div>
+                </div>    
+                <div class="chekboxes">
+                    <p>
+                        <input type="checkbox" name="Check1" id="Check1" required>
+                        Даю свое согласие на обработку введенной персональной информации в соответствии с Федеральным Законом №152-ФЗ от 27.07.2006 "О персональных данных" *
+                    </p>
+                    <p>
+                        <input type="checkbox" name="Check2" id="Check2" required>
+                        Даю свое согласие на публикацию предоставленого контента на сайте Социальных аниматоров *
+                    </p>
+                </div>
+                <div class="button">
+                    <p><button type="submit">Отправить</button></p>
+                </div>
+                <div class="responseTest">   
+            </div>
+            	
+            <h2 class="g-form__title g-form__title_respond"></h2>
+            <div class="g-form__preloader"></div>
+        </form>
+    </nav>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="/g-form/g-form.js"></script> -->
+</body>
+
+<script>
+
+//     // Инициализация input: 
+
+//     let i1_1 = document.querySelector('.i1-1');
+//     let i1_2 = document.querySelector('.i1-2');
+//     let i1_3 = document.querySelector('.i1-3');
+//     let i1_4 = document.querySelector('.i1-4');
+//     let i1_5 = document.querySelector('.i1-5');
+//     let i1_6 = document.querySelector('.i1-6');
+
+//     let i2_1 = document.querySelector('.i2-1');
+//     let i2_2 = document.querySelector('.i2-2');
+//     let i2_3 = document.querySelector('.i2-3');
+//     let i2_4 = document.querySelector('.i2-4');
+//     let i2_5 = document.querySelector('.i2-5');
+//     let i2_6 = document.querySelector('.i2-6');
+//     let i2_7 = document.querySelector('.i2-7');
+//     let i2_8 = document.querySelector('.i2-8');
+//     let i2_9 = document.querySelector('.i2-9');
+//     let i2_10 = document.querySelector('.i2-10');
+//     let i2_11 = document.querySelector('.i2-11');
+//     let i2_12 = document.querySelector('.i2-12');
+
+//     let i3_1 = document.querySelector('.i3-1');
+//     let i3_2 = document.querySelector('.i3-2');
+//     let i3_3 = document.querySelector('.i3-3');
+//     let i3_4 = document.querySelector('.i3-4');
+//     let i3_5 = document.querySelector('.i3-5');
+//     let i3_6 = document.querySelector('.i3-6');
+//     let i3_7 = document.querySelector('.i3-7');
+//     let i3_8 = document.querySelector('.i3-8');
+//     let i3_9 = document.querySelector('.i3-9');
+//     let i3_10 = document.querySelector('.i3-10');
+//     let i3_11 = document.querySelector('.i3-11');
+
+//     // Инициализация вложений
+
+//     let ph1 = document.querySelector('.ph1')
+//     let ph2 = document.querySelector('.ph2')
+    
+//     // Инициализация div
+
+//     let div = document.querySelector('.responseTest')
+    
+//     // Инициализация button
+
+//     let button = document.querySelector('button');
+
+
+//     button.onclick = function() {
+//         let b = "Меня зовут " + i1_1.value + " " + i1_2.value;
+//         div.innerHTML = b;
+//         // i1_1.value = '';
+//         // i1_2.value = '';
+//     }
+
+// const URL_APP = "https://script.google.com/macros/s/AKfycbwI5o_F8RcB20nb9MQIazxqZy18Iit3Eux8XGs7J6wctpnkT8gMWldBZw3TrWTz2jU2/exec";
+
+// const form = document.querySelector("#form");
+
+// form.action = URL_APP;
+
+// form.addEventListener("submit", async (ev) => {
+
+//     ev.preventDefault();
+
+//     const i1_1 = document.querySelector(["i1-1=i1-1"]);
+//     const i1_2 = document.querySelector(["i1-2=i1-2"]);
+//     const i1_3 = document.querySelector(["i1-3=i1-3"]);
+//     const i1_4 = document.querySelector(["i1-4=i1-4"]);
+//     const i1_5 = document.querySelector(["i1-5=i1-5"]);
+//     const i1_6 = document.querySelector(["i1-6=i1-6"]);
+//     const i2_1 = document.querySelector(["i2-1=i2-1"]);
+//     const i2_2 = document.querySelector(["i2-2=i2-2"]);
+//     const i2_3 = document.querySelector(["i2-3=i2-3"]);
+//     const i2_4 = document.querySelector(["i2-4=i2-4"]);
+//     const i2_5 = document.querySelector(["i2-5=i2-5"]);
+//     const i2_6 = document.querySelector(["i2-6=i2-6"]);
+//     const i2_7 = document.querySelector(["i2-7=i2-7"]);
+//     const i2_8 = document.querySelector(["i2-8=i2-8"]);
+//     const i2_9 = document.querySelector(["i2-9=i2-9"]);
+//     const i2_10 = document.querySelector(["i2-10=i2-10"]);
+//     const i2_11 = document.querySelector(["i2-11=i2-11"]);
+//     const i2_12 = document.querySelector(["i2-12=i2-12"]);
+//     const i3_1 = document.querySelector(["i3-1=i3-1"]);
+//     const i3_2 = document.querySelector(["i3-2=i3-2"]);
+//     const i3_3 = document.querySelector(["i3-3=i3-3"]);
+//     const i3_4 = document.querySelector(["i3-4=i3-4"]);
+//     const i3_5 = document.querySelector(["i3-5=i3-5"]);
+//     const i4_1 = document.querySelector(["i4-1=i4-1"]);
+//     const i4_2 = document.querySelector(["i4-2=i4-2"]);
+//     const i4_3 = document.querySelector(["i4-3=i4-3"]);
+//     const i4_4 = document.querySelector(["i4-4=i4-4"]);
+//     const ph1 = document.querySelector(["ph1=ph1"]);
+//     const ph2 = document.querySelector(["ph2=ph2"]);
+
+//     let details = {
+//         name: name.value.trim(),
+//         name: name.value.trim(),
+//     };
+
+//     let formBody = [];
+//     for (let property in details) {
+//         let encodedKey = encodeURIComponent(property);
+//         let encodedValue = encodeURIComponent(details[property]);
+//         formBody.push(encodedKey + '=' + encodedValue);
+//     }
+    
+//     formBody = formBody.join("&");
+
+//     const result = await fetch(URL_APP, {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+//         },
+//         cors: "no-cors",
+//         body: formBody,
+//     })
+//         .then((res) => res.json())
+//         .catch((err) => alert("Ошибка!"))
+
+//         if( result.type === 'success') {
+//             i1_1.value = '';
+//             i1_2.value = '';
+//             i1_3.value = '';
+//             i1_4.value = '';
+//             i1_5.value = '';
+//             i1_6.value = '';
+//             i2_1.value = '';
+//             i2_2.value = '';
+//             i2_3.value = '';
+//             i2_4.value = '';
+//             i2_5.value = '';
+//             i2_6.value = '';
+//             i2_7.value = '';
+//             i2_8.value = '';
+//             i2_9.value = '';
+//             i2_10.value = '';
+//             i2_11.value = '';
+//             i2_12.value = '';
+//             i3_1.value = '';
+//             i3_2.value = '';
+//             i3_3.value = '';
+//             i3_4.value = '';
+//             i3_5.value = '';
+//             i4_1.value = '';
+//             i4_2.value = '';
+//             i4_3.value = '';
+//             i4_4.value = '';
+//             ph1.value = '';
+//             ph2.value = '';
+//         }
+// });
+
+$(function() {
+  $(".g-form").submit(function (event) {
+    event.preventDefault();
+ 
+    // Ссылка, которую получили на этапе публикации приложения
+    let appLink = "https://script.google.com/macros/s/AKfycby87DIaq6MsaUnuJV7oWl5vMIWjm4mc9GTOmQwpe33mjoQxgP1HNDUXZ9jLMIHqWr1cKA/exec";
+ 
+    // Сообщение при успешной отправке данных
+    let successRespond = 'Сообщение успешно отправлено. Посмотрите результат <a target="_blank" href="https://docs.google.com/spreadsheets/d/1XcTivCQL4EZJf1x2kB4UwGj5bAi0sfpx1PwtaKgOWHo/edit?usp=sharing">тут</a>';
+ 
+    // Сообщение при ошибке в отправке данных
+    let errorRespond = 'Не удалось отправить сообщение. Cвяжитесь с администратором сайта по адресу <a href="mailto:smart-landing@ya.ru">smart-landing@ya.ru</a>';
+ 
+    // Id текущей формы
+    let form = $('#' + $(this).attr('id'))[0];
+ 
+    // h2 с ответом формы
+    let formRespond = $(this).find('.g-form__title_respond');
+ 
+    // h2 с заголовком формы
+    let formTitle = $(this).find('.g-form__title_main');
+ 
+    // Блок прелоадера
+    let preloader = $(this).find('.g-form__preloader');
+ 
+    // Кнопка отправки формы
+    let submitButton = $(this).find('.g-form__button');
+ 
+ 
+    // FormData
+    let fd = new FormData(form);
+ 
+ 
+    $.ajax({
+ 
+      url: appLink,
+      type: "POST",
+      data: fd,
+      processData: false,
+      contentType: false,
+      beforeSend: function(){
+ 
+        if(fd.get('honeypot').length) {
+          return false;
+        } else {
+          fd.delete('honeypot');
+        }
+ 
+      // Показываем прелоадер
+      preloader.css('opacity', '1');
+ 
+      // Делаем неактивной кнопку отправки
+      submitButton.prop('disabled', true);
+ 
+      // валидация других полей.
+ 
+    },
+ 
+  }).done(function(res, textStatus, jqXHR) {
+ 
+    if(jqXHR.readyState === 4 && jqXHR.status === 200) {
+ 
+    // Прячем заголовок формы
+    formTitle.css({
+      'display': 'none'
+    });
+ 
+    // Прячем прелоадер
+    preloader.css('opacity', '0');
+ 
+    // Выводим ответ формы.
+    formRespond.html(successRespond).css('color', '#37b599');
+     
+    // Возвращаем активность кнопке отправки
+    submitButton.prop('disabled', false);
+ 
+      // Очищаем поля формы
+      form.reset();
+ 
+    } else {
+      formTitle.css({
+        'display': 'none'
+      });
+      formRespond.html(errorRespond).css('color', '#c64b4b');
+      preloader.css('opacity', '0');
+      setTimeout( () => {
+        formRespond.css({
+          'display': 'none'
+        });
+        formTitle.css({
+          'display': 'block'
+        });
+ 
+        submitButton.prop('disabled', false);
+      }, 5000);
+ 
+      console.log('Гугл не ответил статусом 200');
+    }
+  }).fail(function(res, textStatus, jqXHR) {
+    formTitle.css({
+      'display': 'none'
+    });
+    preloader.css('opacity', '0');
+    formRespond.html('Не удалось отправить сообщение. Cвяжитесь с администратором сайта другим способом').css('color', '#c64b4b');
+    setTimeout( () => {
+      formRespond.css({
+        'display': 'none'
+      });
+      formTitle.css({
+        'display': 'block'
+      });
+      submitButton.prop('disabled', false); 
+    }, 5000);
+ 
+    console.log('Не удалось выполнить запрос по указанному в скрипте пути');
+  }); 
+});
+}(jQuery));
+
+</script>
+
+</html>
