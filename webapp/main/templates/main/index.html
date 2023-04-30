@@ -20,9 +20,6 @@
     }   
 }
 
-textarea {
-    resize: none;
-}
     
 body {
     background: #ffffff;
@@ -38,6 +35,8 @@ body {
 }
 
 textarea {
+    resize: none;
+    max-width: 100%;
     width: 100%;
     margin: 0 auto;
     padding: 0 auto;
@@ -72,8 +71,8 @@ textarea {
     max-width: 40%;
     height: fit-content;
     margin: 1em;
-    margin-top: 6em;
-    margin-bottom: -3em;
+    margin-top: 6%;
+    margin-bottom: -3%;
     margin-left: 50%;
     margin-right: -50%;
     padding: 1em;
@@ -86,8 +85,8 @@ textarea {
     width: 40%;
     max-width: 40%;
     height: fit-content;
-    margin: 1em;
-    margin-top: 6em;
+    margin: 1%;
+    margin-top: 6%;
     margin-bottom: 0em;
     margin-left: 50%;
     margin-right: -50%;
@@ -105,8 +104,8 @@ textarea {
     justify-content: space-between;
     padding: 1em;
     margin: 1em;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
     margin-left: 50%;
     margin-right: -50%;
     border-radius: 10px;
@@ -122,8 +121,8 @@ textarea {
     justify-content: space-between;
     padding: 1em;
     margin: 1em;
-    margin-top: 9em;
-    margin-bottom: 1.5em;
+    margin-top: 30%;
+    margin-bottom: 6%;
     margin-left: 50%;
     margin-right: -50%;
     border-radius: 10px;
@@ -204,6 +203,27 @@ input[type=email] {
         border-radius: 3px;
 }
 
+
+
+.p1, .p2, .p3, .p4, .p5, .p6, .p7, .p8, .p9 {
+    margin-top: 1%;
+    font-size: medium;
+    text-align: center;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+} 
+
+.story {
+    margin-left: 25%;
+    width: 50%;
+    max-width: 50%;
+    margin-top: 1%;
+    font-size: medium;
+    text-align: center;
+    font-weight: auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
 input, select, textarea{
     color: #000000;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -257,6 +277,14 @@ input[type=submit] {
 
 .button {
     position: absolute;
+    margin-top: 2.5%;
+    margin-left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 50%);
+}
+
+.sndbutton {
+    position: absolute;
     margin-top: 5%;
     margin-left: 50%;
     margin-right: -50%;
@@ -276,7 +304,7 @@ input[type=submit] {
 }
 
 .main .page4 {
-    margin-top: 17%;
+    margin-top: 25%;
 }
 
 .main .page5 {
@@ -373,6 +401,8 @@ p {
     text-decoration: none;
     color: #000;
 }
+
+
 </style>
 <body>
     <nav class="navbar">
@@ -389,7 +419,8 @@ p {
     </nav>
     <nav class="main">
         <div class="page1">
-            <h1> Раздел "Об авторе"</h2>
+            <h1>Раздел "Об авторе"<br>
+            <small><i>(кто подает заявку)</i></small></h2>
             <form action="{% url 'response_page' %}" method="">
                 <div class="q">
                     <p>
@@ -424,13 +455,15 @@ p {
                 </div>
                 <div class="q">
                     <p>
-                        Укажите кем вы приходитесь социальному аниматору (если подаете заявку за другого человека)
+                        Укажите кем вы приходитесь социальному аниматору (если подаете заявку за другого человека)<br>
+                        <small><small><i>Вы соседи, представители одной инициативной группы, члены клуба по интересам, коллеги, другое</i></small></small>
                     </p>
                     <input class="i1-6" name="i1-6" type="text"/>
                 </div>
         </div>
         <div class="page2">
-            <h2 align = "center"> Раздел "Герой изменений"</h2>
+            <h2 align = "center"> Раздел "Герой изменений"<br>
+            <small><i>(тот, кто номинируется на участие в конкурсе, - социальный аниматор)</i></small></h2>
             <div class="q">
                 <p>
                     Укажите фамилию номинанта *
@@ -541,8 +574,8 @@ p {
                 <div class="q0">
                     <p>
                         <b>Глава 1. «Предыстория»</b><br>
-                        Опишите как развивалась жизнь на территории до того, как наш герой проявил себя как социальный аниматор. <br>
-                        <small><small><i>Например, если на вашей территории не было мест для прогулок с детьми или отсутствовали места для общения творческих людей.</i></small></small>
+                        Здесь описывается, как развивалась жизнь на территории до того, как наш герой проявил себя как социальный аниматор.<br>
+                        <small><small><i>Например, на территории не было чего-то нужного – мест для прогулок с детьми, пространства для общения творческих людей, общих интересных событий и т.п. </i></small></small>
                     </p>
                     <textarea class="i3-1" name="i3-1" cols="97" rows="10"></textarea>
                 </div>
@@ -550,44 +583,63 @@ p {
                     <p>
                         <b>Глава 2. «Завязка»</b><br>
                         В данной главе описывается проблемная ситуация, которая впоследствии пробудила в нашем герое социального аниматора. Что было не так? Что захотелось изменить?
-                    <small><small><i>Например, исходя из предыдущего ответа - у социального аниматора родился ребенок и он сам столкнулся с проблемой, что некуда выйти с коляской</i></small></small>
+                    <small><small><i>Например, исходя из предыдущего ответа, у номинанта родился ребенок и он сам столкнулся с проблемой, что некуда выйти с коляской.</i></small></small><br>
+                    <small><small><b>Если вы подаете заявку на другого человека, опишите ситуацию так, как вы ее видите. Что, по вашему мнению, пробудило активность номинанта?</b></small></small>
                 </p>
                     <textarea class="i3-2" name="i3-2" cols="97" rows="10"></textarea>
                 </div>
                 <div class="q2">
                     <p>
                         <b>Глава 3. «Появление ГЕРОЯ»</b><br>
-                        Здесь описывается главный герой и его суперспособности:<br>
-                        - На что наш герой вдохновил окружающих<br>
-                        – На какие действия?
-                        <small><small><i>(Например, собраться с жителями и обсудить возможные решения проблемы и так далее)</i></small></small><br>
-                        - Кого именно он вдохновил – каких людей? Сколько их было?
-                        <small><small><i>(Это взрослые, дети, они жители этой территории или соседней?)</i></small></small><br>
-                        - Как ему удалось вдохновить и объединить людей? Какие действия предпринял герой, чтобы заинтересовать людей? <br>
-                        - Какова главная суперспособность нашего героя? Какие его личные и профессиональные качества делают его героем изменений?
+                        Здесь речь идет о качествах номинанта, которые открывают его как социального аниматора, описывают героя и его суперспособности:<br>
+                        •   На что наш герой вдохновил окружающих – на какие действия?<br>
+                        <small><small><i>Например, собраться с соседями и благоустроить общую зону для отдыха, организовать клуб мастеров и обучать мастерству других, вместе придумать и провести семейный праздник и т.п.</i></small></small><br>
+                        <small><small><i>Пожалуйста, отвечая на этот вопрос, не скупитесь на детали – это поможет глубже узнать номинанта.</i></small></small>
                     </p>
-                    <textarea class="i3-3" name="i3-3" cols="97" rows="10"></textarea>
+                    <textarea class="i3-3-1" name="i3-3-1" cols="97" rows="10"></textarea>
+                    <p>
+                        •	Кого именно он вдохновил – каких людей? Сколько их было?<br>
+                        <small><small><i>Это взрослые, дети, они жители этой территории или соседней? </i></small></small>
+                    </p>
+                    <textarea class="i3-3-2" name="i3-3-2" cols="97" rows="10"></textarea>
+                    <p>
+                        •	Как ему удалось вдохновить и объединить людей? Какие действия предпринял герой, чтобы заинтересовать людей?<br>
+                        <small><small><i>Например, рассказал, как подобную ситуацию удалось решить в другом регионе, разыскал и показал, как замечательно выглядела заброшенная территория много лет назад, предложил выполнять работу в виде игры/соревнования и т.п.</i></small></small>
+                    </p>
+                    <textarea class="i3-3-3" name="i3-3-3" cols="97" rows="10"></textarea>
+                    <p>
+                        •	Какова главная суперспособность нашего героя? Какие его личные и профессиональные качества делают его героем изменений? В каких конкретных действиях они проявляются ярче всего?<br>
+                        <small><small><i>Например, уникальные знания и способность ими делиться, владение ремеслом и умение заинтересовать и научить других, умение видеть в людях скрытые таланты, умение превращать скучные действия в увлекательные и др.</i></small></small>
+                    </p>
+                    <textarea class="i3-3-4" name="i3-3-4" cols="97" rows="10"></textarea>
                 </div>
                 <div class="q3">
                     <p>
                         <b>Глава 4. «Конфликт»</b><br>
-                        С какими сложностями столкнулся наш герой и что помогло ему их преодолеть?<br>
-                        <small><small><i>Например, герой столкнулся с недоверием со стороны местных жителей, соседи не дружили друг с другом и не желали совместно проводить досуг, родители не хотели сами участвовать в организации детской площадки для своих детей и др.</i></small></small><br>
-                        Как герой смог преодолеть трудности?<br>
+                        В этой главе рассказывается о препятствиях, без которых, как известно, не обходится ни одна история.<br>
+                        •	С какими сложностями столкнулся наш герой?<br>
+                        <small><small><i>Например, герой столкнулся с недоверием со стороны местных жителей, соседи не дружили друг с другом и не желали совместно проводить досуг, родители не хотели сами участвовать в организации детской площадки для своих детей и др.</i></small></small>
+                    </p>
+                    <textarea class="i3-4-1" name="i3-4-1" cols="97" rows="10"></textarea>
+                    <p>
+                        •	Как герой смог преодолеть трудности?<br>
                         <small><small><i>Например, стал знакомиться со старожилами, расспрашивать об истории территории, проявлял интерес к местным традициям и увлечениям соседей, предлагал помощь соседям, организовывал совместные игры для соседских детей и т.п. </i></small></small>
                     </p>
-                    <textarea class="i3-4" name="i3-4" cols="97" rows="10"></textarea>
+                    <textarea class="i3-4-2" name="i3-4-2" cols="97" rows="10"></textarea>
                 </div>
                 <div class="q">
                     <p>
                         <b>Глава 5. «Развязка»</b><br>
-                        В этой главе читатель узнаёт, что же получилось в результате, а также о том, что делает эту историю уникальной.<br>
-                        Что было организовано/создано/восстановлено?<br>
-                        <small><small><i>Например, несколько семей объединились в клуб по интересам, стали вместе проводить свободное время, к ним со временем присоединились другие, вместе они расчистили и оборудовали игровую площадку</i></small></small><br>
-                        Как изменилась жизнь людей на территории в результате предпринятых действий? В чем проявляются эти изменения?<br>
+                        В этой главе мы узнаем, что же получилось в результате.<br>
+                        •	Что было организовано/создано/восстановлено?<br>
+                        <small><small><i>Например, несколько семей объединились в клуб по интересам, стали вместе проводить свободное время, к ним со временем присоединились другие, вместе они расчистили и оборудовали игровую площадку…</i></small></small><br>
+                    </p>
+                    <textarea class="i3-5-1" name="i3-5-1" cols="97" rows="10"></textarea>
+                    <p>
+                        •	Как изменилась жизнь людей на территории в результате предпринятых действий? В чем проявляются эти изменения?<br>
                         <small><small><i>Например, люди стали дружелюбнее друг к другу, проводят вместе время, обмениваются знаниями и умениями, оказывают друг другу посильную помощь, организуют регулярные события для себя и соседей и т.п.</i></small></small>
                     </p>
-                    <textarea class="i3-5" name="i3-5" cols="97" rows="10"></textarea>
+                    <textarea class="i3-5-2" name="i3-5-2" cols="97" rows="10"></textarea>
                 </div>
                 <div class="page4">
                     <h2 align = 'center'><br>Раздел "Послесловие"</h2>
@@ -650,7 +702,32 @@ p {
                         Даю свое согласие на публикацию предоставленого контента на сайте Социальных аниматоров *
                     </p>
                 </div>
+                <br><hr>
+                <div class="story" id="story">
+                    <div class="p1"></div>
+                    <div class="t1"></div>
+                    <div class="p2"></div>
+                    <div class="t2"></div>
+                    <div class="p3"></div>
+                    <div class="t3-1"></div>
+                    <div class="t3-2"></div>
+                    <div class="t3-3"></div>
+                    <div class="t3-4"></div>
+                    <div class="p4"></div>
+                    <div class="t4-1"></div>
+                    <div class="t4-2"></div>
+                    <div class="p5"></div>
+                    <div class="t5-1"></div>
+                    <div class="t5-2"></div>
+                    <div class="t6-1"></div>
+                    <div class="t6-2"></div>
+                    <div class="t6-3"></div>
+                    <div class="t6-4"></div>
+                </div>
                 <div class="button">
+                    <p><button type="button" id="testbutton" class="testbutton">Сформировать историю</button></p>
+                </div>
+                <div class="sndbutton">
                     <p><button type="submit">Отправить</button></p>
                 </div>
                 <div class="responseTest">   
@@ -661,283 +738,50 @@ p {
         </form>
     </nav>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script src="/g-form/g-form.js"></script> -->
 </body>
 
 <script>
 
-//     // Инициализация input: 
+document.querySelector('button').addEventListener('click', myClick)
 
-//     let i1_1 = document.querySelector('.i1-1');
-//     let i1_2 = document.querySelector('.i1-2');
-//     let i1_3 = document.querySelector('.i1-3');
-//     let i1_4 = document.querySelector('.i1-4');
-//     let i1_5 = document.querySelector('.i1-5');
-//     let i1_6 = document.querySelector('.i1-6');
-
-//     let i2_1 = document.querySelector('.i2-1');
-//     let i2_2 = document.querySelector('.i2-2');
-//     let i2_3 = document.querySelector('.i2-3');
-//     let i2_4 = document.querySelector('.i2-4');
-//     let i2_5 = document.querySelector('.i2-5');
-//     let i2_6 = document.querySelector('.i2-6');
-//     let i2_7 = document.querySelector('.i2-7');
-//     let i2_8 = document.querySelector('.i2-8');
-//     let i2_9 = document.querySelector('.i2-9');
-//     let i2_10 = document.querySelector('.i2-10');
-//     let i2_11 = document.querySelector('.i2-11');
-//     let i2_12 = document.querySelector('.i2-12');
-
-//     let i3_1 = document.querySelector('.i3-1');
-//     let i3_2 = document.querySelector('.i3-2');
-//     let i3_3 = document.querySelector('.i3-3');
-//     let i3_4 = document.querySelector('.i3-4');
-//     let i3_5 = document.querySelector('.i3-5');
-//     let i3_6 = document.querySelector('.i3-6');
-//     let i3_7 = document.querySelector('.i3-7');
-//     let i3_8 = document.querySelector('.i3-8');
-//     let i3_9 = document.querySelector('.i3-9');
-//     let i3_10 = document.querySelector('.i3-10');
-//     let i3_11 = document.querySelector('.i3-11');
-
-//     // Инициализация вложений
-
-//     let ph1 = document.querySelector('.ph1')
-//     let ph2 = document.querySelector('.ph2')
-    
-//     // Инициализация div
-
-//     let div = document.querySelector('.responseTest')
-    
-//     // Инициализация button
-
-//     let button = document.querySelector('button');
-
-
-//     button.onclick = function() {
-//         let b = "Меня зовут " + i1_1.value + " " + i1_2.value;
-//         div.innerHTML = b;
-//         // i1_1.value = '';
-//         // i1_2.value = '';
-//     }
-
-// const URL_APP = "https://script.google.com/macros/s/AKfycbwI5o_F8RcB20nb9MQIazxqZy18Iit3Eux8XGs7J6wctpnkT8gMWldBZw3TrWTz2jU2/exec";
-
-// const form = document.querySelector("#form");
-
-// form.action = URL_APP;
-
-// form.addEventListener("submit", async (ev) => {
-
-//     ev.preventDefault();
-
-//     const i1_1 = document.querySelector(["i1-1=i1-1"]);
-//     const i1_2 = document.querySelector(["i1-2=i1-2"]);
-//     const i1_3 = document.querySelector(["i1-3=i1-3"]);
-//     const i1_4 = document.querySelector(["i1-4=i1-4"]);
-//     const i1_5 = document.querySelector(["i1-5=i1-5"]);
-//     const i1_6 = document.querySelector(["i1-6=i1-6"]);
-//     const i2_1 = document.querySelector(["i2-1=i2-1"]);
-//     const i2_2 = document.querySelector(["i2-2=i2-2"]);
-//     const i2_3 = document.querySelector(["i2-3=i2-3"]);
-//     const i2_4 = document.querySelector(["i2-4=i2-4"]);
-//     const i2_5 = document.querySelector(["i2-5=i2-5"]);
-//     const i2_6 = document.querySelector(["i2-6=i2-6"]);
-//     const i2_7 = document.querySelector(["i2-7=i2-7"]);
-//     const i2_8 = document.querySelector(["i2-8=i2-8"]);
-//     const i2_9 = document.querySelector(["i2-9=i2-9"]);
-//     const i2_10 = document.querySelector(["i2-10=i2-10"]);
-//     const i2_11 = document.querySelector(["i2-11=i2-11"]);
-//     const i2_12 = document.querySelector(["i2-12=i2-12"]);
-//     const i3_1 = document.querySelector(["i3-1=i3-1"]);
-//     const i3_2 = document.querySelector(["i3-2=i3-2"]);
-//     const i3_3 = document.querySelector(["i3-3=i3-3"]);
-//     const i3_4 = document.querySelector(["i3-4=i3-4"]);
-//     const i3_5 = document.querySelector(["i3-5=i3-5"]);
-//     const i4_1 = document.querySelector(["i4-1=i4-1"]);
-//     const i4_2 = document.querySelector(["i4-2=i4-2"]);
-//     const i4_3 = document.querySelector(["i4-3=i4-3"]);
-//     const i4_4 = document.querySelector(["i4-4=i4-4"]);
-//     const ph1 = document.querySelector(["ph1=ph1"]);
-//     const ph2 = document.querySelector(["ph2=ph2"]);
-
-//     let details = {
-//         name: name.value.trim(),
-//         name: name.value.trim(),
-//     };
-
-//     let formBody = [];
-//     for (let property in details) {
-//         let encodedKey = encodeURIComponent(property);
-//         let encodedValue = encodeURIComponent(details[property]);
-//         formBody.push(encodedKey + '=' + encodedValue);
-//     }
-    
-//     formBody = formBody.join("&");
-
-//     const result = await fetch(URL_APP, {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-//         },
-//         cors: "no-cors",
-//         body: formBody,
-//     })
-//         .then((res) => res.json())
-//         .catch((err) => alert("Ошибка!"))
-
-//         if( result.type === 'success') {
-//             i1_1.value = '';
-//             i1_2.value = '';
-//             i1_3.value = '';
-//             i1_4.value = '';
-//             i1_5.value = '';
-//             i1_6.value = '';
-//             i2_1.value = '';
-//             i2_2.value = '';
-//             i2_3.value = '';
-//             i2_4.value = '';
-//             i2_5.value = '';
-//             i2_6.value = '';
-//             i2_7.value = '';
-//             i2_8.value = '';
-//             i2_9.value = '';
-//             i2_10.value = '';
-//             i2_11.value = '';
-//             i2_12.value = '';
-//             i3_1.value = '';
-//             i3_2.value = '';
-//             i3_3.value = '';
-//             i3_4.value = '';
-//             i3_5.value = '';
-//             i4_1.value = '';
-//             i4_2.value = '';
-//             i4_3.value = '';
-//             i4_4.value = '';
-//             ph1.value = '';
-//             ph2.value = '';
-//         }
-// });
-
-$(function() {
-  $(".g-form").submit(function (event) {
-    event.preventDefault();
- 
-    // Ссылка, которую получили на этапе публикации приложения
-    let appLink = "https://script.google.com/macros/s/AKfycby87DIaq6MsaUnuJV7oWl5vMIWjm4mc9GTOmQwpe33mjoQxgP1HNDUXZ9jLMIHqWr1cKA/exec";
- 
-    // Сообщение при успешной отправке данных
-    let successRespond = 'Сообщение успешно отправлено. Посмотрите результат <a target="_blank" href="https://docs.google.com/spreadsheets/d/1XcTivCQL4EZJf1x2kB4UwGj5bAi0sfpx1PwtaKgOWHo/edit?usp=sharing">тут</a>';
- 
-    // Сообщение при ошибке в отправке данных
-    let errorRespond = 'Не удалось отправить сообщение. Cвяжитесь с администратором сайта по адресу <a href="mailto:smart-landing@ya.ru">smart-landing@ya.ru</a>';
- 
-    // Id текущей формы
-    let form = $('#' + $(this).attr('id'))[0];
- 
-    // h2 с ответом формы
-    let formRespond = $(this).find('.g-form__title_respond');
- 
-    // h2 с заголовком формы
-    let formTitle = $(this).find('.g-form__title_main');
- 
-    // Блок прелоадера
-    let preloader = $(this).find('.g-form__preloader');
- 
-    // Кнопка отправки формы
-    let submitButton = $(this).find('.g-form__button');
- 
- 
-    // FormData
-    let fd = new FormData(form);
- 
- 
-    $.ajax({
- 
-      url: appLink,
-      type: "POST",
-      data: fd,
-      processData: false,
-      contentType: false,
-      beforeSend: function(){
- 
-        if(fd.get('honeypot').length) {
-          return false;
-        } else {
-          fd.delete('honeypot');
-        }
- 
-      // Показываем прелоадер
-      preloader.css('opacity', '1');
- 
-      // Делаем неактивной кнопку отправки
-      submitButton.prop('disabled', true);
- 
-      // валидация других полей.
- 
-    },
- 
-  }).done(function(res, textStatus, jqXHR) {
- 
-    if(jqXHR.readyState === 4 && jqXHR.status === 200) {
- 
-    // Прячем заголовок формы
-    formTitle.css({
-      'display': 'none'
-    });
- 
-    // Прячем прелоадер
-    preloader.css('opacity', '0');
- 
-    // Выводим ответ формы.
-    formRespond.html(successRespond).css('color', '#37b599');
-     
-    // Возвращаем активность кнопке отправки
-    submitButton.prop('disabled', false);
- 
-      // Очищаем поля формы
-      form.reset();
- 
-    } else {
-      formTitle.css({
-        'display': 'none'
-      });
-      formRespond.html(errorRespond).css('color', '#c64b4b');
-      preloader.css('opacity', '0');
-      setTimeout( () => {
-        formRespond.css({
-          'display': 'none'
-        });
-        formTitle.css({
-          'display': 'block'
-        });
- 
-        submitButton.prop('disabled', false);
-      }, 5000);
- 
-      console.log('Гугл не ответил статусом 200');
-    }
-  }).fail(function(res, textStatus, jqXHR) {
-    formTitle.css({
-      'display': 'none'
-    });
-    preloader.css('opacity', '0');
-    formRespond.html('Не удалось отправить сообщение. Cвяжитесь с администратором сайта другим способом').css('color', '#c64b4b');
-    setTimeout( () => {
-      formRespond.css({
-        'display': 'none'
-      });
-      formTitle.css({
-        'display': 'block'
-      });
-      submitButton.prop('disabled', false); 
-    }, 5000);
- 
-    console.log('Не удалось выполнить запрос по указанному в скрипте пути');
-  }); 
-});
-}(jQuery));
-
+function myClick(){
+    let gl1 = document.querySelector('.i3-1').value;
+    let gl2 = document.querySelector('.i3-2').value;
+    let gl3_1 = document.querySelector('.i3-3-1').value;
+    let gl3_2 = document.querySelector('.i3-3-2').value;
+    let gl3_3 = document.querySelector('.i3-3-3').value;
+    let gl3_4 = document.querySelector('.i3-3-4').value;
+    let gl4_1 = document.querySelector('.i3-4-1').value;
+    let gl4_2 = document.querySelector('.i3-4-2').value;
+    let gl5_1 = document.querySelector('.i3-5-1').value;
+    let gl5_2 = document.querySelector('.i3-5-2').value;
+    let gl6 = document.querySelector('.i4-1').value;
+    let gl7 = document.querySelector('.i4-2').value;
+    let gl8 = document.querySelector('.i4-3').value;
+    let gl9 = document.querySelector('.i4-4').value;
+    document.querySelector('.p1').innerHTML = 'Глава 1';
+    document.querySelector('.t1').innerHTML = gl1;
+    document.querySelector('.p2').innerHTML = 'Глава 2';
+    document.querySelector('.t2').innerHTML = gl2;
+    document.querySelector('.p3').innerHTML = 'Глава 3';
+    document.querySelector('.t3-1').innerHTML = gl3_1;
+    document.querySelector('.t3-2').innerHTML = gl3_2;
+    document.querySelector('.t3-3').innerHTML = gl3_3;
+    document.querySelector('.t3-4').innerHTML = gl3_4;
+    document.querySelector('.p4').innerHTML = 'Глава 4';
+    document.querySelector('.t4-1').innerHTML = gl4_1;
+    document.querySelector('.t4-2').innerHTML = gl4_2;
+    document.querySelector('.t5-1').innerHTML = gl5_1;
+    document.querySelector('.t5-2').innerHTML = gl5_2;
+    // document.querySelector('.p6').innerHTML = 'Что делает эту историю уникальной?';
+    document.querySelector('.t6-1').innerHTML = gl6;
+    // document.querySelector('.p7').innerHTML = 'Есть ли у истории продолжение?';
+    document.querySelector('.t6-2').innerHTML = gl7;
+    // document.querySelector('.p8').innerHTML = 'Есть ли у героя последователи?';
+    document.querySelector('.t6-3').innerHTML = gl8;
+    // document.querySelector('.p9').innerHTML = 'Это был единичный случай?';
+    document.querySelector('.t6-4').innerHTML = gl9;
+}
 </script>
 
 </html>
