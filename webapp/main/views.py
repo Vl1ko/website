@@ -14,7 +14,7 @@ def response(request):
     sec_name = request.GET['i1-3']
     city = request.GET['i1-4']
     email = request.GET['i1-5']
-    status = request.GET['i1-5']
+    status = request.GET['i1-6']
     female_r = request.GET['i2-1']
     name_r = request.GET['i2-2']
     secname_r = request.GET['i2-3']
